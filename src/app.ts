@@ -31,4 +31,18 @@ AppDataSource.initialize()
   })
   .catch((error) => console.log(error))
 
+// Graceful shutdown
+process.on('SIGINT', () => {
+  console.log('SIGINT signal received: closing PostgreSQL connection')
+  AppDataSource.destroy()
+    .then(() => {
+      console.log('PostgreSQL connection closed')
+      process.exit(0)
+    })
+    .catch((error) => {
+      console.error(`Error closing PostgreSQL connection: ${error}`)
+      process.exit(1)
+    })
+})
+
 export default app

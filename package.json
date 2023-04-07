@@ -1,0 +1,30 @@
+{
+  "name": "linker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "tsc",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "@types/redis": "^4.0.11",
+    "express": "^4.18.2",
+    "pg": "^8.10.0",
+    "redis": "^4.6.5",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.13",
+    "typescript": "^5.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

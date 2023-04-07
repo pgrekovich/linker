@@ -26,14 +26,6 @@ export const createLink = async (originalUrl: string, userId: string) => {
   return link
 }
 
-export const getLinksByUser = async (userId: string) => {
-  const linkRepository = AppDataSource.getRepository(Link)
-
-  const links = await linkRepository.find({ where: { user: { id: userId } } })
-
-  return links
-}
-
 export const findLinkByShortenedUrl = async (shortenedUrl: string) => {
   const linkRepository = AppDataSource.getRepository(Link)
 

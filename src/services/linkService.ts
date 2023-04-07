@@ -4,9 +4,12 @@ import { Link } from '../entities/Link'
 import { User } from '../entities/User'
 import { redisClient } from '../config/redisConfig'
 
-export const createLink = async (originalUrl: string, userId: string) => {
+export const createLink = async (
+  originalUrl: string,
+  userId: string,
+  customShortenedUrl?: string
+) => {
   const userRepository = AppDataSource.getRepository(User)
-
   const user = await userRepository.findOneBy({ id: userId })
 
   if (!user) {
@@ -15,7 +18,17 @@ export const createLink = async (originalUrl: string, userId: string) => {
 
   const linkRepository = AppDataSource.getRepository(Link)
 
-  const shortenedUrl = nanoid(10)
+  // If a custom short link is provided, check if it's already taken
+  if (customShortenedUrl) {
+    const existingLink = await linkRepository.findOneBy({
+      shortenedUrl: customShortenedUrl
+    })
+    if (existingLink) {
+      throw new Error('Custom short link is already taken')
+    }
+  }
+
+  const shortenedUrl = customShortenedUrl || nanoid(10)
 
   const link = new Link()
   link.originalUrl = originalUrl

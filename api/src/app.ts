@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import AppDataSource from './config/typeormConfig'
 import routes from './routes'
+import path from 'path'
 
 const app: Application = express()
 
@@ -16,8 +17,12 @@ app.use(morgan('dev'))
 // Routes
 app.use('/', routes)
 
-app.use((req: Request, res: Response) => {
-  res.status(404).json({ message: 'Route not found' })
+// Serve the frontend files
+app.use(express.static(path.join(__dirname, 'public')))
+
+// Catch-all to serve the frontend's index.html for other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 // Initialize TypeORM connection and start the application

@@ -4,10 +4,10 @@
 
 ## 🌈 Features
 
-- 🚀 Dead Simple Frontend: Because who needs complexity when you're just trying to shorten URLs? We've stripped it down to the bare necessities. Just like a caveman with a club, you'll have no problem smashing those URLs into submission.
-- 🛡️ Brute Force Protection: No one likes a bully, and that includes brutish brute-forcing bots. We've got your back with a built-in shield against those cyber creeps.
-- ⚡ Lightning Fast Redis Caching: Like a cheetah chasing a gazelle, our URL shortener is fast. Redis caching powers this magnificent beast, and you'll have your short links in a flash.
-- 🕵 No Data Collection: We believe in privacy. No, seriously. We won't collect your data or perform any analytics. It's like we're not even watching. Pinky promise. 🤙
+- 🚀 **Dead Simple Frontend:** Because who needs complexity when you're just trying to shorten URLs? We've stripped it down to the bare necessities. Just like a caveman with a club, you'll have no problem smashing those URLs into submission.
+- 🛡️ **Brute Force Protection:** No one likes a bully, and that includes brutish brute-forcing bots. We've got your back with a built-in shield against those cyber creeps.
+- ⚡ **Lightning Fast Redis Caching:** Like a cheetah chasing a gazelle, our URL shortener is fast. Redis caching powers this magnificent beast, and you'll have your short links in a flash.
+- 🕵 **No Data Collection:** We believe in privacy. No, seriously. We won't collect your data or perform any analytics. It's like we're not even watching. Pinky promise. 🤙
 
 ## 🌟 Getting Started
 

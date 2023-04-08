@@ -15,8 +15,9 @@ To begin your magical journey into the land of URL shortening, just use Docker! 
 
 1. Clone the repo: `git clone https://github.com/pgrekovich/linker.git`
 2. cd into the project directory: `cd linker`
-3. Fire up the containers with Docker Compose: `docker-compose up -d`
-4. Access the app by visiting `http://localhost:3000` in your favorite browser.
+3. Rename `.env.example` in root into `.env` and change values if you want
+4. Fire up the containers with Docker Compose: `docker-compose up -d`
+5. Access the app by visiting `http://localhost:3000` in your favorite browser.
 
 That's it! Enjoy your voyage into the wonderful world of Linker. 🚀
 
